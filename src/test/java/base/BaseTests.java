@@ -21,6 +21,11 @@ public class BaseTests {
         driver = new ChromeDriver();
         driver.get("https://the-internet.herokuapp.com");
 
+        driver.findElement(By.linkText("Shifting Content")).click();
+        driver.findElement(By.linkText("Example 1: Menu Element")).click();
+        List<WebElement> menuItems = driver.findElements(By.tagName("li"));
+        System.out.println("Number of menu items: " + menuItems.size());
+
         homePage = new HomePage(driver);
 
     }
